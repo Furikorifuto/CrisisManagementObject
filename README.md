@@ -1,2 +1,2 @@
-# public_smw_object
+# CrisisManagementObject
  Bug reports until PM Shadow Mistress Yuko
