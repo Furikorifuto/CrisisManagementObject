@@ -389,6 +389,10 @@ mario_win:
 	LDA #$02
 	STA !turn_timer,x
 	STA !direction_mirror,x
+	STZ !sprite_speed_y,x
+	STZ !sprite_speed_x,x
+	LDA #$09
+	JSL $02ACEF|!BankB
 
 	INC !hp,x
 	LDA #$28
