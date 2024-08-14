@@ -2,6 +2,7 @@
 ; Screen Loop Platform
 ; requested by CalHal
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; exbit: left 8 pixels if set
 ; Ex1:    YXPPCCC0
 ;	YX  - turn with ON/OFF
 ;	PP  - platform width (32pix,48pix,64pix,80pix)
@@ -17,6 +18,12 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 print "INIT ",pc
+	%BEC(+)
+	LDA !sprite_x_low,x
+	CLC
+	ADC #$08
+	STA !sprite_x_low,x
++
 	;set platform width
 	LDA !extra_byte_1,x
 	LSR #4
